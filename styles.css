@@ -1,0 +1,467 @@
+/* Variables CSS para colores consistentes */
+:root {
+    --primary-color: #b89044;
+    --secondary-color: #000000;
+    --white-color: #ffffff;
+    --hover-color: #8a6c33;
+    --whatsapp-color: #25d366;
+    --transition-default: 0.3s ease;
+}
+
+/* Estilos generales */
+body {
+    background-color: var(--white-color);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos de la barra de navegación */
+.navbar-custom {
+    background-color: var(--secondary-color);
+    padding: 0;
+}
+
+.navbar-brand img {
+    max-height: 110px;
+    margin-left: 170px;
+}
+
+.nav-link {
+    color: var(--primary-color) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    font-size: 18px;
+    position: relative;
+    transition: color var(--transition-default), transform var(--transition-default);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-default), background-color var(--transition-default);
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+    color: var(--white-color) !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    background-color: var(--white-color);
+}
+
+.navbar-toggler {
+    transition: transform var(--transition-default);
+}
+
+.navbar-toggler:hover {
+    transform: rotate(90deg);
+}
+
+.slogan {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-style: italic;
+}
+
+.btn-encontrarnos {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: transform var(--transition-default), background-color var(--transition-default);
+}
+
+.btn-encontrarnos:hover {
+    transform: scale(1.1);
+    background-color: var(--white-color);
+    color: var(--secondary-color); 
+}
+
+/* Estilos de la sección hero */
+.hero-section {
+    background-image: url('/Assets/facturas.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+    color: var(--primary-color);
+    font-size: 5rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Estilos de la sección de productos */
+.product-section {
+    padding: 50px 0;
+    background-color: var(--white-color);
+    margin-top: -40px;
+}
+
+.product-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform var(--transition-default);
+}
+
+.product-item img:hover {
+    transform: scale(1.05);
+}
+
+.product-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* Estilos de la sección de otros productos */
+.productos-section {
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.section-title h1 {
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 0;
+    font-family: 'Brush Script MT', cursive;
+}
+
+.section-title .underline {
+    width: 150px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 0 auto;
+}
+
+.category-item {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-title {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.category-underline {
+    width: 100px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 0 auto 25px;
+}
+
+.category-image {
+    margin-bottom: 25px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-image img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.btn-ver-productos {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background-color var(--transition-default);
+}
+
+.btn-ver-productos:hover {
+    background-color: var(--hover-color);
+    color: var(--white-color);
+}
+
+/* Estilos para el footer */
+.contact-banner {
+    position: relative;
+    background-image: url('/Assets/facturas.png');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.contact-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.contact-banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-banner h2 {
+    color: var(--primary-color);
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-family: 'Brush Script MT', cursive;
+}
+
+.contact-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 30px;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: color var(--transition-default);
+}
+
+.contact-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+.smile-icon {
+    width: 300px;
+    height: 100px;
+    margin: 20px auto 0;
+    position: relative;
+}
+
+.smile-icon::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 150px;
+    border-radius: 0 0 300px 300px;
+    border-bottom: 40px solid #ffb627;
+    z-index: 2;
+}
+
+.footer-main {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 50px 0;
+}
+
+.footer-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.footer-nav a {
+    color: var(--primary-color);
+    margin: 0 15px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color var(--transition-default);
+}
+
+.footer-nav a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: transform var(--transition-default);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.certification-logos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.certification-logo {
+    max-width: 100px;
+    margin-left: 20px;
+}
+
+/* Estilos de botones flotantes */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--whatsapp-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        margin-left: 0;
+        max-height: 80px;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .contact-banner h2 {
+        font-size: 3rem;
+    }
+    
+    .footer-info, 
+    .footer-nav, 
+    .certification-logos {
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .certification-logo {
+        margin: 0 10px;
+    }
+    
+    .smile-icon::after {
+        width: 200px;
+        height: 100px;
+    }
+}

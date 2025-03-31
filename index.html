@@ -3,610 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boston Confiteria - Productos de panadería y pastelería de calidad">
     <title>Facturería - Boston</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Estilos personalizados */
-        body {
-            background-color: white;
-            font-family: 'Arial';
-        }
-        
-        /* Estilos de la barra de navegación */
-        .navbar-custom {
-            background-color: rgb(0, 0, 0);
-            padding: 0 0;
-        }
-        
-        .navbar-brand img {
-            max-height: 50px;
-        }
-        
-        .nav-link {
-            color: #b89044 !important;
-            font-weight: 500;
-            margin: 0 10px;
-            font-size: 18px;
-            position: relative;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 0;
-            height: 2px;
-            background-color: #b89044;
-            transition: width 0.3s ease, background-color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            transform: scale(1.1);
-            color: #fff !important;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-            background-color: #ffffff;
-        }
-
-        .navbar-toggler {
-            transition: transform 0.3s ease;
-        }
-
-        .navbar-toggler:hover {
-            transform: rotate(90deg);
-        }
-
-        .slogan {
-            color: #b89044;
-            font-size: 18px;
-            font-style: italic;
-        }
-        
-        .slogan img {
-            width: 25px;
-            margin-left: 5px;
-        }
-        
-        .btn-encontrarnos {
-            background-color: #b89044;
-            color: #000000;
-            border-radius: 25px;
-            padding: 8px 20px;
-            font-weight: 500;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .btn-encontrarnos:hover {
-            transform: scale(1.1);
-            background-color: #ffffff;
-            color: #000000; 
-        }
-        
-        /* Estilos de la sección hero */
-        .hero-section {
-            background-image: url('/Assets/facturas.png');
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .hero-title {
-            color: #b89044;
-            font-size: 5rem;
-            font-weight: 700;
-            position: relative;
-            z-index: 2;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        }
-        
-        /* Estilos de la sección de productos */
-        .product-section {
-            padding: 50px 0;
-            background-color: rgb(255, 255, 255);
-            margin-top: -40px;
-        }
-        
-        .product-item {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .product-item img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-            transition: transform 0.3s;
-        }
-        
-        .product-item img:hover {
-            transform: scale(1.05);
-        }
-        
-        .product-title {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: #b89044;
-        }
-        
-        /* Estilos de botones flotantes */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: #b89044;
-            color: black;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 999;
-        }
-        
-        .whatsapp-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #000000;
-            color: #000000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            cursor: pointer;
-            z-index: 999;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Estilos de la sección de otros productos */
-        .productos-section {
-            padding: 50px 0;
-            text-align: center;
-            margin-top: 25px;
-            margin-bottom: 25px;
-        }
-        
-        .section-title {
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            color: #b89044;
-            font-size: 1rem;
-            text-transform: uppercase;
-            margin-bottom: 0;
-            font-weight: 600;
-        }
-        
-        .section-title h1 {
-            color: #b89044;
-            font-size: 3rem;
-            font-weight: 700;
-            margin-top: 0;
-            font-family: 'Brush Script MT', cursive;
-        }
-        
-        .section-title .underline {
-            width: 150px;
-            height: 3px;
-            background-color: #b89044;
-            margin: 0 auto;
-        }
-        
-        .category-item {
-            margin-bottom: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .category-title {
-            color: #b89044;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        
-        .category-underline {
-            width: 100px;
-            height: 3px;
-            background-color: #b89044;
-            margin: 0 auto 25px;
-        }
-        
-        .category-image {
-            margin-bottom: 25px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .category-image img {
-            max-height: 100%;
-            max-width: 100%;
-        }
-        
-        .btn-ver-productos {
-            background-color: #b89044;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
-        }
-        
-        .btn-ver-productos:hover {
-            background-color: #8a6c33;
-            color: white;
-        }
-        </style>
-
-        
-        <!-- Barra de navegación -->
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-            <img src="Assets/logoBoston.png" alt="Boston Confiteria" style="max-height: 110px; margin-left: 170px;">
-            </a>
-            <div class="slogan d-none d-lg-block">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="Assets/logoBoston.png" alt="Boston Confiteria">
+                </a>
+                <div class="slogan d-none d-lg-block"></div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Empresa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-encontrarnos d-none d-lg-block">
+                    Dónde encontrarnos
+                    <img src="Assets/carritoDeCompras.png" alt="Carrito de compras" style="max-height: 20px; margin-left: 5px;">
+                </a>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Productos</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Empresa</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-                </li>
-            </ul>
-            </div>
-            <a href="#" class="btn btn-encontrarnos d-none d-lg-block">
-            Dónde encontrarnos <i class="fas fa-shopping-cart"></i>
-            <img src="Assets/carritoDeCompras.png" alt="Logo" style="max-height: 20px; margin-left: 5px;">
-            </a>
-        </div>
         </nav>
+    </header>
 
+    <main>
         <!-- Sección Hero con título -->
         <section class="hero-section">
-        <h1 class="hero-title">Facturería</h1>
+            <h1 class="hero-title">Facturería</h1>
         </section>
 
         <!-- Sección de productos -->
         <section class="product-section">
-        <div class="container">
-            <div class="row">
-            <div class="col-md-3 col-6 product-item">
-                <img src="/Assets/medialuna.jpg" alt="Medialuna" style="width: 100%; height: 200px; object-fit: cover;">
-                <h3 class="product-title">Medialuna</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6 product-item">
+                        <img src="/Assets/medialuna.jpg" alt="Medialuna">
+                        <h3 class="product-title">Medialuna</h3>
+                    </div>
+                    <div class="col-md-3 col-6 product-item">
+                        <img src="/Assets/vigilante.jpg" alt="Vigilante">
+                        <h3 class="product-title">Vigilante</h3>
+                    </div>
+                    <div class="col-md-3 col-6 product-item">
+                        <img src="/Assets/cara-sucia.webp" alt="Cara sucia">
+                        <h3 class="product-title">Cara sucia</h3>
+                    </div>
+                    <div class="col-md-3 col-6 product-item">
+                        <img src="/Assets/pan.jpg" alt="Pan">
+                        <h3 class="product-title">Pan</h3>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3 col-6 product-item">
-                <img src="/Assets/vigilante.jpg" alt="Vigilante" style="width: 100%; height: 200px; object-fit: cover;">
-                <h3 class="product-title">Vigilante</h3>
-            </div>
-            <div class="col-md-3 col-6 product-item">
-                <img src="/Assets/cara-sucia.webp" alt="Cara cara-sucia" style="width: 100%; height: 200px; object-fit: cover;">
-                <h3 class="product-title">Cara sucia</h3>
-            </div>
-            <div class="col-md-3 col-6 product-item">
-                <img src="/Assets/pan.jpg" alt="Pan" style="width: 100%; height: 200px; object-fit: cover;">
-                <h3 class="product-title">Pan</h3>
-            </div>
-            </div>
-        </div>
         </section>
 
-        <!--SECCION DE PRODUCTOS-->
+        <!-- Sección de otros productos -->
         <section class="productos-section">
-        <div class="container">
-            <!-- Título de la sección -->
-            <div class="section-title">
-            <h2>OTROS</h2>
-            <h1>Productos</h1>
-            <div class="underline"></div>
-            </div>
-            
-            <!-- Categorías de productos -->
-            <div class="row justify-content-center">
-            <!-- Medialunas -->
-            <div class="col-lg-2 col-md-4 col-6 category-item">
-                <h3 class="category-title">MEDIALUNAS</h3>
-                <div class="category-underline"></div>
-                <div class="category-image">
-                <img src="/Assets/medialuna.jpg" alt="Medialunas">
+            <div class="container">
+                <!-- Título de la sección -->
+                <div class="section-title">
+                    <h2>OTROS</h2>
+                    <h1>Productos</h1>
+                    <div class="underline"></div>
                 </div>
-                <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
-            </div>
-            
-            <!-- Panificación -->
-            <div class="col-lg-2 col-md-4 col-6 category-item">
-                <h3 class="category-title">PANIFICACIÓN</h3>
-                <div class="category-underline"></div>
-                <div class="category-image">
-                <img src="/Assets/pan.jpg" alt="Panificación">
+                
+                <!-- Categorías de productos -->
+                <div class="row justify-content-center">
+                    <!-- Medialunas -->
+                    <div class="col-lg-2 col-md-4 col-6 category-item">
+                        <h3 class="category-title">MEDIALUNAS</h3>
+                        <div class="category-underline"></div>
+                        <div class="category-image">
+                            <img src="/Assets/medialuna.jpg" alt="Medialunas">
+                        </div>
+                        <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
+                    </div>
+                    
+                    <!-- Panificación -->
+                    <div class="col-lg-2 col-md-4 col-6 category-item">
+                        <h3 class="category-title">PANIFICACIÓN</h3>
+                        <div class="category-underline"></div>
+                        <div class="category-image">
+                            <img src="/Assets/pan.jpg" alt="Panificación">
+                        </div>
+                        <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
+                    </div>
+                    
+                    <!-- Facturería -->
+                    <div class="col-lg-2 col-md-4 col-6 category-item">
+                        <h3 class="category-title">FACTURERÍA</h3>
+                        <div class="category-underline"></div>
+                        <div class="category-image">
+                            <img src="/Assets/vigilante.jpg" alt="Facturería">
+                        </div>
+                        <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
+                    </div>
+                    
+                    <!-- Especialidades -->
+                    <div class="col-lg-2 col-md-4 col-6 category-item">
+                        <h3 class="category-title">ESPECIALIDADES</h3>
+                        <div class="category-underline"></div>
+                        <div class="category-image">
+                            <img src="/Assets/medialuna.jpg" alt="Especialidades">
+                        </div>
+                        <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
+                    </div>
+                    
+                    <!-- Línea Natural -->
+                    <div class="col-lg-2 col-md-4 col-6 category-item">
+                        <h3 class="category-title">LÍNEA NATURAL</h3>
+                        <div class="category-underline"></div>
+                        <div class="category-image">
+                            <img src="/Assets/pan.jpg" alt="Línea Natural">
+                        </div>
+                        <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
+                    </div>
                 </div>
-                <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
             </div>
-            
-            <!-- Facturería -->
-            <div class="col-lg-2 col-md-4 col-6 category-item">
-                <h3 class="category-title">FACTURERÍA</h3>
-                <div class="category-underline"></div>
-                <div class="category-image">
-                <img src="/Assets/vigilante.jpg" alt="Facturería">
-                </div>
-                <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
-            </div>
-            
-            <!-- Especialidades -->
-            <div class="col-lg-2 col-md-4 col-6 category-item">
-                <h3 class="category-title">ESPECIALIDADES</h3>
-                <div class="category-underline"></div>
-                <div class="category-image">
-                <img src="/Assets/medialuna.jpg" alt="Especialidades">
-                </div>
-                <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
-            </div>
-            
-            <!-- Línea Natural -->
-            <div class="col-lg-2 col-md-4 col-6 category-item">
-                <h3 class="category-title">LÍNEA NATURAL</h3>
-                <div class="category-underline"></div>
-                <div class="category-image">
-                <img src="/Assets/pan.jpg" alt="Línea Natural">
-                </div>
-                <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
-            </div>
-            </div>
-        </div>
         </section>
-        <style>
-            /* Estilos para el footer */
-            .contact-banner {
-                position: relative;
-                background-image: url('/assets/facturas.png');
-                background-size: cover;
-                background-position: center;
-                padding: 80px 0;
-                text-align: center;
-                overflow: hidden;
-            }
-            
-            .contact-banner::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 1;
-            }
-            
-            .contact-banner-content {
-                position: relative;
-                z-index: 2;
-            }
-            
-            .contact-banner h2 {
-                color: white;
-                font-size: 4rem;
-                font-weight: 700;
-                margin-bottom: 30px;
-                font-family: 'Brush Script MT', cursive;
-            }
-            
-            .contact-btn {
-                background-color: #000000;
-                color: #b89044;
-                padding: 10px 30px;
-                font-weight: 600;
-                border: none;
-                text-transform: uppercase;
-                font-size: 1rem;
-                transition: background-color 0.3s;
-            }
-            
-            .contact-btn:hover {
-                background-color: #000000;
-                color: white;
-            }
-            
-            .smile-icon {
-                width: 300px;
-                height: 100px;
-                margin: 20px auto 0;
-                position: relative;
-            }
-            
-            .smile-icon::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 300px;
-                height: 150px;
-                border-radius: 0 0 300px 300px;
-                border-bottom: 40px solid #ffb627;
-                z-index: 2;
-            }
-            
-            .footer-main {
-                background-color: #000000;
-                color: #b89044;
-                padding: 50px 0;
-            }
-            
-            .footer-logo {
-                max-width: 200px;
-                margin-bottom: 20px;
-            }
-            
-            .footer-info h3 {
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin-bottom: 20px;
-            }
-            
-            .footer-info p {
-                margin-bottom: 10px;
-                font-size: 1rem;
-            }
-            
-            .footer-contact {
-                display: flex;
-                align-items: center;
-                margin-bottom: 10px;
-            }
-            
-            .footer-contact i {
-                margin-right: 10px;
-                font-size: 1.2rem;
-            }
-            
-            .footer-nav {
-                display: flex;
-                justify-content: center;
-                margin: 30px 0;
-            }
-            
-            .footer-nav a {
-                color: #b89044;
-                margin: 0 15px;
-                font-size: 1.1rem;
-                text-decoration: none;
-                transition: color 0.3s;
-            }
-            
-            .footer-nav a:hover {
-                color: #b89044;
-            }
-            
-            .social-icons {
-                display: flex;
-                justify-content: center;
-                margin-top: 20px;
-            }
-            
-            .social-icon {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 40px;
-                height: 40px;
-                background-color: white;
-                border-radius: 50%;
-                margin: 0 10px;
-                transition: transform 0.3s;
-            }
-            
-            .social-icon:hover {
-                transform: scale(1.1);
-            }
-            
-            .social-icon i {
-                color: #b89044;
-                font-size: 1.2rem;
-            }
-            
-            .certification-logos {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-            }
-            
-            .certification-logo {
-                max-width: 100px;
-                margin-left: 20px;
-            }
-            
-            .back-to-top {
-                position: fixed;
-                bottom: 30px;
-                left: 30px;
-                width: 50px;
-                height: 50px;
-                background-color: #b89044;
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 24px;
-                cursor: pointer;
-                z-index: 999;
-            }
-            
-            .whatsapp-button {
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
-                width: 60px;
-                height: 60px;
-                background-color: #25d366;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 30px;
-                cursor: pointer;
-                z-index: 999;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-            
-            .whatsapp-button i {
-                color: white;
-            }
-            
-            @media (max-width: 768px) {
-                .footer-info, .footer-nav, .certification-logos {
-                    text-align: center;
-                    justify-content: center;
-                    margin-bottom: 30px;
-                }
-                
-                .certification-logo {
-                    margin: 0 10px;
-                }
-                
-                .smile-icon::after {
-                    width: 200px;
-                    height: 100px;
-                }
-            }
-        </style>
-    </head>
-    <body>
+
         <!-- Banner de contacto -->
         <section class="contact-banner">
             <div class="container contact-banner-content">
@@ -615,64 +151,64 @@
                 <div class="smile-icon"></div>
             </div>
         </section>
-        
-        <!-- Footer principal -->
-        <footer class="footer-main">
-            <div class="container">
-                <div class="row">
-                    <!-- Logo y información -->
-                    <div class="col-md-4">
-                        <img src="/placeholder.svg?height=100&width=200" alt="Bompaning Logo" class="footer-logo">
-                        <div class="footer-info">
-                            <h3>Planta productiva</h3>
-                            <p>Francisco de Quevedo 45. Córdoba, Argentina</p>
-                            <p>Comercialización en Buenos Aires y todo el país</p>
-                            <div class="footer-contact">
-                                <i class="fas fa-phone"></i>
-                                <span>+54 351 368 5049</span>
-                            </div>
-                            <div class="footer-contact">
-                                <i class="fas fa-envelope"></i>
-                                <span>info@bompaning.com.ar</span>
-                            </div>
+    </main>
+    
+    <!-- Footer principal -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <!-- Logo y información -->
+                <div class="col-md-4">
+                    <img src="/placeholder.svg?height=100&width=200" alt="Boston Logo" class="footer-logo">
+                    <div class="footer-info">
+                        <h3>Planta productiva</h3>
+                        <p>Francisco de Quevedo 45. Córdoba, Argentina</p>
+                        <p>Comercialización en Buenos Aires y todo el país</p>
+                        <div class="footer-contact">
+                            <i class="fas fa-phone"></i>
+                            <span>+54 351 368 5049</span>
                         </div>
-                    </div>
-                    
-                    <!-- Navegación y redes sociales -->
-                    <div class="col-md-4">
-                        <div class="footer-nav">
-                            <a href="#">Inicio</a>
-                            <a href="#">Productos</a>
-                            <a href="#">Empresa</a>
-                            <a href="#">Contacto</a>
-                        </div>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Certificaciones -->
-                    <div class="col-md-4">
-                        <div class="certification-logos">
-                            <img src="/placeholder.svg?height=120&width=100" alt="Certificación IRAM" class="certification-logo">
-                            <img src="/placeholder.svg?height=120&width=100" alt="Certificación IRAM" class="certification-logo">
+                        <div class="footer-contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@boston.com.ar</span>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Navegación y redes sociales -->
+                <div class="col-md-4">
+                    <div class="footer-nav">
+                        <a href="#">Inicio</a>
+                        <a href="#">Productos</a>
+                        <a href="#">Empresa</a>
+                        <a href="#">Contacto</a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Certificaciones -->
+                <div class="col-md-4">
+                    <div class="certification-logos">
+                        <img src="/placeholder.svg?height=120&width=100" alt="Certificación IRAM" class="certification-logo">
+                        <img src="/placeholder.svg?height=120&width=100" alt="Certificación IRAM" class="certification-logo">
+                    </div>
+                </div>
             </div>
-        </footer>
-        
+        </div>
+    </footer>
 
     <!-- Botón de WhatsApp -->
-    <a href="#" class="whatsapp-button" style="background-color: #25d366;">
+    <a href="#" class="whatsapp-button" aria-label="Contactar por WhatsApp">
         <img src="Assets/wpp.jpg" alt="WhatsApp" style="width: 100%; height: 100%; border-radius: 50%;">
     </a>
 
