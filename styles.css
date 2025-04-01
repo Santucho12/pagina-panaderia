@@ -2,8 +2,8 @@
 :root {
     --primary-color: #b89044;
     --secondary-color: #000000;
-    --white-color: #ffffff;
-    --hover-color: #8a6c33;
+    --white-color: #f7f7f7;
+    --hover-color: #272727;
     --whatsapp-color: #25d366;
     --transition-default: 0.3s ease;
 }
@@ -15,6 +15,7 @@ body {
     line-height: 1.6;
 }
 
+
 img {
     max-width: 100%;
     height: auto;
@@ -23,12 +24,15 @@ img {
 /* Barra de navegación */
 .navbar-custom {
     background-color: var(--secondary-color);
-    padding: 0;
+    padding: 0px;
+    margin-left: -200px; /* Mueve la navbar 40px hacia la izquierda */
 }
 
+
 .navbar-brand img {
-    max-height: 110px;
+    max-height: 100px;
     margin-left: 170px;
+    padding: 20px;
 }
 
 .nav-link {
@@ -69,13 +73,33 @@ img {
     transform: rotate(90deg);
 }
 
+.mas-vendidos {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-default), background-color var(--transition-default), box-shadow var(--transition-default);
+    margin-bottom: -40px;
+}
+
+.mas-vendidos:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 .slogan {
     color: var(--primary-color);
     font-size: 18px;
     font-style: italic;
 }
 
-.btn-encontrarnos {
+.btn-Comprar {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     border-radius: 25px;
@@ -84,7 +108,7 @@ img {
     transition: transform var(--transition-default), background-color var(--transition-default);
 }
 
-.btn-encontrarnos:hover {
+.btn-Comprar:hover {
     transform: scale(1.1);
     background-color: var(--white-color);
     color: var(--secondary-color); 
@@ -96,7 +120,7 @@ img {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 300px;
+    height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,7 +128,6 @@ img {
 }
 
 .hero-section::before {
-    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -124,7 +147,7 @@ img {
 
 /* Sección de productos */
 .product-section {
-    padding: 50px 0;
+    padding: 45px 0;
     background-color: var(--white-color);
     margin-top: -40px;
 }
@@ -416,6 +439,15 @@ img {
     z-index: 999;
 }
 
+@keyframes whatsapp-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 .whatsapp-button {
     position: fixed;
     bottom: 30px;
@@ -431,7 +463,41 @@ img {
     cursor: pointer;
     z-index: 999;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: whatsapp-bounce 1.5s infinite;
 }
+
+
+.qr-reviews {
+    padding: 50px 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espacio entre QR y mapa */
+}
+
+.map-container {
+    width: 50%;
+    max-width: 600px;
+    margin-top: 100px;
+}
+
+.qr-container {
+    width: 30%;
+    text-align: center;
+}
+
+.qr-image {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+
 
 /* Media queries para responsividad */
 @media (max-width: 768px) {

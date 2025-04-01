@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Barra de navegación -->
     <header>
@@ -21,7 +23,8 @@
                     <img src="Assets/logoBoston.png" alt="Boston Confiteria">
                 </a>
                 <div class="slogan d-none d-lg-block"></div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -33,16 +36,14 @@
                             <a class="nav-link" href="#">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Empresa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
+                            <a class="nav-link" href="#">Trabaja con nosotros</a>
                         </li>
                     </ul>
                 </div>
-                <a href="#" class="btn btn-encontrarnos d-none d-lg-block">
-                    Dónde encontrarnos
-                    <img src="Assets/carritoDeCompras.png" alt="Carrito de compras" style="max-height: 20px; margin-left: 5px;">
+                <a href="#" class="btn btn-Comprar d-none d-lg-block">
+                    Comprar Ahora
+                    <img src="Assets/carritoDeCompras.png" alt="Carrito de compras"
+                        style="max-height: 20px; margin-left: 5px;">
                 </a>
             </div>
         </nav>
@@ -51,12 +52,12 @@
     <main>
         <!-- Sección Hero con título -->
         <section class="hero-section">
-            <h1 class="hero-title">Facturería</h1>
         </section>
 
         <!-- Sección de productos -->
         <section class="product-section">
             <div class="container">
+                <h1 class="mas-vendidos">Mas vendidos</h1>
                 <div class="row">
                     <div class="col-md-3 col-6 product-item">
                         <img src="/Assets/medialuna.jpg" alt="Medialuna">
@@ -73,7 +74,6 @@
                     <div class="col-md-3 col-6 product-item">
                         <img src="/Assets/pan.jpg" alt="Pan">
                         <h3 class="product-title">Pan</h3>
-                    </div>
                 </div>
             </div>
         </section>
@@ -87,7 +87,7 @@
                     <h1>Productos</h1>
                     <div class="underline"></div>
                 </div>
-                
+
                 <!-- Categorías de productos -->
                 <div class="row justify-content-center">
                     <!-- Medialunas -->
@@ -99,7 +99,7 @@
                         </div>
                         <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
                     </div>
-                    
+
                     <!-- Panificación -->
                     <div class="col-lg-2 col-md-4 col-6 category-item">
                         <h3 class="category-title">PANIFICACIÓN</h3>
@@ -109,7 +109,7 @@
                         </div>
                         <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
                     </div>
-                    
+
                     <!-- Facturería -->
                     <div class="col-lg-2 col-md-4 col-6 category-item">
                         <h3 class="category-title">FACTURERÍA</h3>
@@ -119,7 +119,7 @@
                         </div>
                         <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
                     </div>
-                    
+
                     <!-- Especialidades -->
                     <div class="col-lg-2 col-md-4 col-6 category-item">
                         <h3 class="category-title">ESPECIALIDADES</h3>
@@ -129,7 +129,7 @@
                         </div>
                         <a href="#" class="btn btn-ver-productos">VER PRODUCTOS</a>
                     </div>
-                    
+
                     <!-- Línea Natural -->
                     <div class="col-lg-2 col-md-4 col-6 category-item">
                         <h3 class="category-title">LÍNEA NATURAL</h3>
@@ -143,110 +143,58 @@
             </div>
         </section>
 
-        <!-- Banner de contacto -->
-        <section class="contact-banner">
-            <div class="container contact-banner-content">
-                <h2>Hagamos buenas migas</h2>
-                <a href="#" class="btn contact-btn">CONTACTO</a>
-                <div class="smile-icon"></div>
-            </div>
-        </section>
-    </main>
-
-    
+       
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <!-- AGREGANDO SECCION DEL QR -->
-    <section class="container py-5">
-        <h1 class="text-center mb-4">Unete al equipo de Boston</h1>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-6 text-center">
-                <h1 class="text-center mb-4">Escanea el QR</h1>
+    <!-- qr y mapa -->
+    <section class="qr-maps-section" style="padding: 50px; background-color: #f8f9fa;">
+        <div class="container d-flex flex-wrap text-center">
+            <!-- Contenedor del Código QR (Izquierda) -->
+            <div class="qr-container col-md-6 d-flex flex-column align-items-center gap-4">
+            <h1 class="mb-4" style="color: #b89044; font-weight: bold;">¡Únete al equipo de Boston!</h1>
+            <div>
+                <h2 class="mb-3" style="color: #000000;">Escanea el QR y forma parte</h2>
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://ejemplo.com" alt="Código QR" class="img-fluid">
+                <p class="mt-3" style="font-size: 1.2rem; color: #5a5a5a;">Descubre un mundo de oportunidades con nosotros.</p>
             </div>
-            <div class="col-md-6">
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
-                    </div>
-                    <div class="mb-3">
-                        <label for="Cualidades" class="form-label">Cualidades</label>
-                        <input type="text" class="form-control" id="name" placeholder="Ingresa tus cualidades">
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Porque te gustaria formar parte de Boston</label>
-                        <textarea class="form-control" id="message" rows="3" placeholder="Escribe tu mensaje"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
-                </form>
+            </div>
+
+            <!-- Contenedor del Mapa (Derecha) -->
+            <div class="map-container col-md-6">
+            <h3>Ubicación</h3>
+            <p>Estomba 114, B8000 Bahía Blanca,</p>
+            <p>Provincia de Buenos Aires</p>
+            <a href="https://maps.google.com/maps?q=Estomba+114,+Bahía+Blanca,+Buenos+Aires" target="_blank">
+                <span>Cómo llegar</span>
+            </a>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.5076171873584!2d-62.27252492351837!3d-38.71716937176296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbcb0cb6e98e7%3A0x3c641fa869a8ae1c!2sBelgrano%20441%2C%20B8000%20Bah%C3%ADa%20Blanca%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1sen!2sus!4v1710339600000!5m2!1sen!2sus" 
+                width="100%" 
+                height="400px" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
             </div>
         </div>
     </section>
-
-
-
-
-
-
+            
+    
+    
+    
 
     
+
+
+
     <!-- Footer principal -->
     <footer class="footer-main">
         <div class="container">
             <div class="row">
                 <!-- Logo y información -->
                 <div class="col-md-4">
-                    <img src="/placeholder.svg?height=100&width=200" alt="Boston Logo" class="footer-logo">
+                    <img src="/Assets/logoBoston.png" alt="Boston Logo" class="footer-logo">
                     <div class="footer-info">
                         <h3>Planta productiva</h3>
                         <p>Francisco de Quevedo 45. Córdoba, Argentina</p>
@@ -261,14 +209,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Navegación y redes sociales -->
                 <div class="col-md-4">
                     <div class="footer-nav">
                         <a href="#">Inicio</a>
                         <a href="#">Productos</a>
                         <a href="#">Empresa</a>
-                        <a href="#">Contacto</a>
                     </div>
                     <div class="social-icons">
                         <a href="#" class="social-icon" aria-label="Facebook">
@@ -282,12 +229,14 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Certificaciones -->
                 <div class="col-md-4">
                     <div class="certification-logos">
-                        <img src="/placeholder.svg?height=120&width=100" alt="Certificación IRAM" class="certification-logo">
-                        <img src="/placeholder.svg?height=120&width=100" alt="Certificación IRAM" class="certification-logo">
+                        <img src="/placeholder.svg?height=120&width=100" alt="Certificación IRAM"
+                            class="certification-logo">
+                        <img src="/placeholder.svg?height=120&width=100" alt="Certificación IRAM"
+                            class="certification-logo">
                     </div>
                 </div>
             </div>
@@ -302,4 +251,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
